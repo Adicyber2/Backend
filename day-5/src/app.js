@@ -2,29 +2,26 @@ const express=require("express")
 
 let app=express()
 
+// we can use the middleware {app.use(express.json())} to get data from the server 
 app.use(express.json())
+
 const notes=[]
 
-// post
-app.post("/notes",(req,res)=>{
+app.get("/",(req,res)=>{
+    res.send("connection is done")
+})
+
+// post mathod server pe kuch bhejna ho to use karte hai
+ app.post("/notes",(req,res)=>{
     notes.push(req.body)
+    console.log(notes);
+    res.send("connection sucssessfully")
     
-    res.status(201).json({
-        
-    })
-})
+ })
 
-// get notes
+//  Get method we can use to get the data from server to frond end
+ app.get("/notes",(req,res)=>{
+    res.send(notes)
+ })
 
-app.get("/notes:bhava",(req,res)=>{
-    res.status(200).json({
-        notes:notes
-    })
-})
-
-// patch  notes
-
-app.patch("/notes:index",(req,res)=>{
-    notes[req.params.index]
-})
-module.export=app
+module.exports=app
