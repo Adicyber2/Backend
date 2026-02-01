@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width:100%
+    
+}
+
+body{
+    background-color: black;
+}
+
+.mouse-follower{
+
+    height: 30px;
+    width: 30px;
+    border: 2px solid rgb(84, 235, 235);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.small-mouse{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: white;
+
+}
