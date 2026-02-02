@@ -11,7 +11,7 @@ function App() {
 
      .then((res)=>{
       setNotes(res.data.notes)
-      console.log(res.data);
+      
       
   })
 }
@@ -41,8 +41,8 @@ function App() {
 // Delete method
 
   function deleteBtn(elm){
-  // axios.delete("http://localhost:3000/api/notes/:id")
-  console.log(elm.title);
+  axios.delete("http://localhost:3000/api/notes/:id")
+  console.log(elm.target.elements);
   
 }
 
