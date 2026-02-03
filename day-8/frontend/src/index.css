@@ -26,3 +26,9 @@ html{
   max-width: 20rem;
   color: rgb(238, 221, 191);
 }
+
+.note-create{
+  display: flex;
+  gap: 0.7rem;
+  padding: 1rem;
+}

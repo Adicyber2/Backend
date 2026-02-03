@@ -33,6 +33,8 @@ function App() {
        title:title.value,
        description:description.value
     })
+
+    fetchNotes()
   
  
     
@@ -40,9 +42,11 @@ function App() {
 
 // Delete method
 
-  function deleteBtn(elm){
-  axios.delete("http://localhost:3000/api/notes/:id")
-  console.log(elm.target.elements);
+  function deleteBtn(noteId){
+  axios.delete("http://localhost:3000/api/notes/"+noteId)
+  console.log(noteId);
+
+  fetchNotes()
   
 }
 
@@ -61,7 +65,7 @@ function App() {
             return <div className="note">
           <h1>{note.title}</h1>
           <p>{note.description}</p>
-          <button onClick={deleteBtn}>Delete</button>
+          <button onClick={()=>deleteBtn(note._id)}>Delete</button>
         </div>
       
 

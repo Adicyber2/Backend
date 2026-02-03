@@ -6,6 +6,11 @@ const cors=require("cors")
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(express.static("./public"))
+
+const path=require("path")
+const { log } = require("console")
+const filePath = path.join("src", "controllers", "user.js");
 
 
 app.post('/api/notes',async (req,res)=>{
@@ -65,6 +70,9 @@ app.patch("/api/notes/:id",async (req,res)=>{
     })
 })
 
-
+console.log(__dirname)
+app.use('*name',(req,res)=>{
+    res.sendFile(path.join(__dirname,"..","/public/index.html"))
+})
 
 module.exports= app
