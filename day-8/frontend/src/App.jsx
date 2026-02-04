@@ -2,6 +2,11 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 
 function App() {
+
+
+
+
+
   const [notes, setNotes] = useState([
    
   ])
@@ -17,6 +22,7 @@ function App() {
 }
   useEffect(()=>{
     fetchNotes()
+
     
    },[])
  
@@ -53,10 +59,17 @@ fetchNotes()
 
 // Update notes method
 
-function updateNotes(){
- console.log();
+function updateNotes(noteId){
+  const newTitle=prompt("update your title")
+  const newDescription=prompt("update the description")
  
-  
+  axios.patch("http://localhost:3000/api/notes/"+noteId,{title:newTitle},{description:newDescription})
+ 
+  .then((res)=>{
+    console.log(res);
+    
+  })
+  fetchNotes()
 }
 
   return (
@@ -68,10 +81,11 @@ function updateNotes(){
         <button type='submit'>Creat Notes</button>
       </form>
 
-      <div className="notes">
+      <div className="notes" >
         {
           notes.map(note =>{
-            return <div className="note">
+
+            return <div className="note"  >
           <h1>{note.title}</h1>
           <p>{note.description}</p>
           <button className='update' onClick={()=>updateNotes(note._id)}>Edit</button>

@@ -1,0 +1,14 @@
+{Authentication and Verification}::=>
+
+Authentication :=> identify karna ki user kon hai and admin kon hai
+
+
+Authorization  :=> it means identify the user to what should be task can be preform
+
+
+Validation :=> data ka format check karna matlab validation hota hai
+
+
+Verification :=> jo information hai wo sahi hai ya fir nahi ye check karna hota hai
+
+
