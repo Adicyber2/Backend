@@ -27,10 +27,15 @@ html{
   max-width: 20rem;
   color: rgb(238, 221, 191);
 }
-.note button{
+.note .delete{
   border-radius: 0.7rem;
   padding: 0.4rem;
   background-color: red;
+}
+.note .update{
+  border-radius: 0.7rem;
+  padding: 0.4rem;
+  background-color: rgb(59, 230, 136);
 }
 
 .note-create{

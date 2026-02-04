@@ -36,7 +36,7 @@ function App() {
 
     fetchNotes()
   
- 
+   
     
    }
 
@@ -44,9 +44,18 @@ function App() {
 
   function deleteBtn(noteId){
   axios.delete("http://localhost:3000/api/notes/"+noteId)
-  console.log(noteId);
+    // console.log(noteId);
+    
+fetchNotes()
+  
+  
+}
 
-  fetchNotes()
+// Update notes method
+
+function updateNotes(){
+ console.log();
+ 
   
 }
 
@@ -65,7 +74,9 @@ function App() {
             return <div className="note">
           <h1>{note.title}</h1>
           <p>{note.description}</p>
-          <button onClick={()=>deleteBtn(note._id)}>Delete</button>
+          <button className='update' onClick={()=>updateNotes(note._id)}>Edit</button>
+          <button className='delete' onClick={()=>deleteBtn(note._id)}>Delete</button>
+
         </div>
       
 
