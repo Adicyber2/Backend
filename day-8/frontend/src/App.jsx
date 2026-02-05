@@ -96,6 +96,7 @@ function updateNotes(noteId){
 
           })
         }
+        
       </div> 
     </>
 
