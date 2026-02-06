@@ -3,9 +3,10 @@ const mongoose=require("mongoose")
 const userSchema=new mongoose.Schema({
     name:String,
     email:{
-        
+        type:String,
+        unique:[true,"this email user alredy exist"]
     },
-    password:String
+    password:String,
 })
 
 const userModel=mongoose.model("user",userSchema)

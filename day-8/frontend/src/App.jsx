@@ -23,7 +23,6 @@ function App() {
   useEffect(()=>{
     fetchNotes()
 
-    
    },[])
  
 //  post method
