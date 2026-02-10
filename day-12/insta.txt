@@ -1,0 +1,18 @@
+==> Authentication
+    ==>Register
+    ==>Login
+    ==>Logout(Token Blacklist)
+    ==>[Otp based Registration]
+
+
+==>Post
+    =>create
+    =>can see the feed
+    =>like Post (colloection type)
+    =>save post
+
+
+==>User
+    =>followers
+    =>following
+

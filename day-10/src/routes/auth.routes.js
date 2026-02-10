@@ -2,6 +2,8 @@ const express=require("express")
 const userModel=require("../models/user.model")
 const jwt=require("jsonwebtoken")
 const authRouter=express.Router()
+
+// Crypto is prebuild function 
 const crypto=require("crypto")
 
 
